@@ -1,11 +1,21 @@
 import React from 'react';
 import { View, Image, Button } from 'react-native';
 import { HomeScreen } from './src/HomeScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 class App extends React.Component {
   render() {  
     return (
-      <HomeScreen/>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Gallery" 
+                        component={HomeScreen}
+                        options={{headerShown: false }}/>
+          </Stack.Navigator>
+      </NavigationContainer>
     );
   }
 }
