@@ -1,15 +1,12 @@
 import React from "react";
 import { View } from "react-native";
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
-
-export const ListItem = () => {
+import { ImageScreen } from "./ImageScreen";
+export const List = () => {
     let url = "https://api.unsplash.com/photos/?client_id=896d4f52c589547b2134bd75ed48742db637fa51810b49b607e37e46ab2c0043";
     
     fetch(url)
     .then(response => response.json())
     .then(response => {
-
         for (let i = 0; i < response.length; i++){
             let div = document.getElementById('div');
             let img = document.createElement('img');       
@@ -38,7 +35,11 @@ export const ListItem = () => {
         }
         return response;
     })
-
+    .then((result) => {
+        for(let i = 0; i < result.length; i++){
+            console.log(result[i]);
+        }
+    })
     return (
         <View>
             <div id="div"></div>

@@ -1,19 +1,26 @@
 import React from 'react';
-import { View } from 'react-native';
-import { Navbar } from './src/Navbar';
-import { ListItem } from './src/ListItem';
+import { View, Image, Button } from 'react-native';
+import { HomeScreen } from './src/HomeScreen';
+import { ImageScreen } from './src/ImageScreen';
 import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 class App extends React.Component {
-  render() {
+  render() {  
     return (
       <NavigationContainer>
-        <View>
-            <Navbar/>
-            <ListItem/>
-        </View>        
+        <Stack.Navigator>
+          <Stack.Screen name="Gallery" 
+                        component={HomeScreen}
+                        options={{headerShown: false }}/>
+          <Stack.Screen name="Image" 
+                        component={ImageScreen}
+                        options={{headerShown: false }}/>
+          </Stack.Navigator>
       </NavigationContainer>
-    );    
+    );
   }
 }
 
