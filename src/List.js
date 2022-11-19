@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 export const List = () => {
     let url = "https://api.unsplash.com/photos/?client_id=896d4f52c589547b2134bd75ed48742db637fa51810b49b607e37e46ab2c0043";
-    
+
     fetch(url)
     .then(response => response.json())
     .then(response => {
@@ -24,21 +24,9 @@ export const List = () => {
             if (response[i].user.last_name != null){
                 div.append(response[i].user.last_name);
             }
-            img.addEventListener('click', function (){
-                if (img.width == window.screen.width){
-                    img.width = response[i].width;
-                } else{
-                    img.width = window.screen.width;
-                }
-            });
-        }
-        return response;
-    })
-    .then((result) => {
-        for(let i = 0; i < result.length; i++){
-            console.log(result[i]);
         }
     })
+    // result[i].urls.full - картинка
     return (
         <View>
             <div id="div"></div>
