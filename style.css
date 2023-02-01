@@ -1,0 +1,28 @@
+body{
+  margin: 0;
+  overflow-x: hidden;
+}
+img{
+  /* max-width: 100%; */
+}
+#navbar {
+  align-items: "center";
+  justify-content: "center";
+  background-color: "#3949ab";
+}
+.text {
+  color: 'white';
+  font-size: 36px;
+}
+#title{
+  text-align: center;
+  font-size: 2.4rem;
+}
+#div{
+  text-align: center;
+  font-size: 2.4rem;
+}
+@font-face {
+  font-family: "Noto Serif Display Regular";
+  src: url(static/NotoSerifDisplay/NotoSerifDisplay-Italic.ttf);
+}
